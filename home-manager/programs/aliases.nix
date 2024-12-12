@@ -32,7 +32,7 @@
   shell = {
     # General
     "," = "comma";
-    cat = "bat";
+    #cat = "bat";
     conf = "code ~/.config/nixpkgs";
     dc = "docker compose";
     diff = "diff --color=auto";

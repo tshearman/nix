@@ -15,7 +15,7 @@ let
   ];
 
   databaseTools = with pkgs; [
-    postgresql_14
+    postgresql_17
     redis
   ];
 
@@ -31,6 +31,7 @@ let
   gitTools = (with pkgs; [
     difftastic
     git-crypt
+    git-lfs
   ] ++ (with gitAndTools; [
     diff-so-fancy
     git-codeowners
@@ -53,17 +54,17 @@ let
 
   misc = with pkgs; [
     comma
-    elixir
-    elixir-ls
-    lima
-    mprocs
-    neofetch
-    ngrok
-    process-compose
-    protobuf
-    reattach-to-user-namespace
-    vector
-    yt-dlp
+  #  elixir
+  #  elixir-ls
+  #  lima
+  #  mprocs
+  #  neofetch
+  #  ngrok
+  #  process-compose
+  #  protobuf
+  #  reattach-to-user-namespace
+  #  vector
+  #  yt-dlp
   ];
 
   nixTools = with pkgs; [
@@ -71,7 +72,7 @@ let
     nixpkgs-fmt
   ];
 
-  pythonTools = with pkgs; [ python311 ];
+  pythonTools = with pkgs; [ python314 ];
 
   rustTools = with pkgs; [
     bacon
@@ -108,11 +109,11 @@ pkgs.extraPkgs
 ++ databaseTools
 ++ devOpsTools
 ++ gitTools
-++ jsTools
+# ++ jsTools
 ++ macTools
 ++ misc
 ++ nixTools
 ++ pythonTools
-++ rustTools
-++ scripts
+# ++ rustTools
+# ++ scripts
 ++ security

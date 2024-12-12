@@ -30,7 +30,6 @@
       stateVersion = "24.05";
       system = "aarch64-darwin";
       username = "toby";
-      hostname = "macbook";
       caches = {
         nixos-org = {
           cache = "https://cache.nixos.org";
@@ -81,17 +80,31 @@
         ++ (with inputs.nixpkgs-unstable.legacyPackages.${system}; [ ]);
       };
 
-      darwinConfigurations."${hostname}" = inputs.nix-darwin.lib.darwinSystem {
-        inherit system;
-        modules = [
-          { system.stateVersion = 1; }
-          inputs.determinate.darwinModules.default
-          inputs.h.darwinModules.default
-          inputs.self.darwinModules.base
-          inputs.self.darwinModules.caching
-          inputs.home-manager.darwinModules.home-manager
-          inputs.self.darwinModules.home-manager
-        ];
+      darwinConfigurations = {
+        macbook = inputs.nix-darwin.lib.darwinSystem {
+          inherit system;
+          modules = [
+            { system.stateVersion = 1; }
+            inputs.determinate.darwinModules.default
+            inputs.h.darwinModules.default
+            inputs.self.darwinModules.base
+            inputs.self.darwinModules.caching
+            inputs.home-manager.darwinModules.home-manager
+            inputs.self.darwinModules.home-manager
+          ];
+        };
+        mini = inputs.nix-darwin.lib.darwinSystem {
+          inherit system;
+          modules = [
+            { system.stateVersion = 1; }
+            inputs.determinate.darwinModules.default
+            inputs.h.darwinModules.default
+            inputs.self.darwinModules.base   
+            inputs.self.darwinModules.caching
+            inputs.home-manager.darwinModules.home-manager
+            inputs.self.darwinModules.home-manager
+          ];
+        }; 
       };
 
       darwinModules = {
@@ -116,3 +129,4 @@
         ./templates;
     };
 }
+

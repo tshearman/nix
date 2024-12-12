@@ -4,40 +4,40 @@
   # Alternative terminal
   alacritty = import ./programs/alacritty.nix { inherit pkgs; };
 
-  autojump = {
-    enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
-  };
+  #autojump = {
+  #  enable = true;
+  #  enableZshIntegration = true;
+  #  enableBashIntegration = true;
+  #};
 
   # Fancy replacement for cat
-  bat = {
-    enable = true;
-
-    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-    syntaxes = { };
-    themes = {
-      dracula = {
-        src = pkgs.fetchFromGitHub {
-          owner = "dracula";
-          repo = "sublime";
-          rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
-          sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
-        };
-        file = "Dracula.tmTheme";
-      };
-    };
-  };
+  #bat = {
+  #  enable = true;
+  #
+  #  extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+  #  syntaxes = { };
+  #  themes = {
+  #    dracula = {
+  #      src = pkgs.fetchFromGitHub {
+  #        owner = "dracula";
+  #        repo = "sublime";
+  #        rev = "26c57ec282abcaa76e57e055f38432bd827ac34e";
+  #        sha256 = "019hfl4zbn4vm4154hh3bwk6hm7bdxbr1hdww83nabxwjn99ndhv";
+  #      };
+  #      file = "Dracula.tmTheme";
+  #    };
+  #  };
+  #};
 
   bottom = {
     enable = true;
   };
 
   # Navigate directory trees
-  broot = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  #broot = {
+  #  enable = true;
+  #  enableZshIntegration = true;
+  #};
 
   # Easy shell environments
   direnv = {
@@ -48,10 +48,10 @@
   };
 
   # Replacement for ls
-  eza = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  #eza = {
+  #  enable = true;
+  #  enableZshIntegration = true;
+  #};
 
   # Fuzzy finder
   fzf = {
@@ -69,7 +69,7 @@
   gpg.enable = true;
 
   # Helix editor
-  helix = import ./programs/helix.nix { inherit pkgs; };
+  #helix = import ./programs/helix.nix { inherit pkgs; };
 
   # Configure HM itself
   home-manager = {
@@ -91,16 +91,16 @@
   };
 
   # For Git rebases and such
-  neovim = import ./programs/neovim.nix {
-    inherit (pkgs) vimPlugins;
-  };
+  #neovim = import ./programs/neovim.nix {
+  #  inherit (pkgs) vimPlugins;
+  #};
 
   # Mostly for use with comma
-  nix-index = {
-    enable = true;
-    enableZshIntegration = true;
-    package = pkgs.nix-index;
-  };
+  #nix-index = {
+  #  enable = true;
+  #  enableZshIntegration = true;
+  #  package = pkgs.nix-index;
+  #};
 
   # ripgrep
   ripgrep = {
@@ -110,7 +110,7 @@
   # The provider of my shell aesthetic
   starship = import ./programs/starship.nix { inherit pkgs; };
 
-  tmux = import ./programs/tmux.nix;
+  #tmux = import ./programs/tmux.nix;
 
   # My most-used editor
   # vscode = import ./programs/vscode.nix { inherit pkgs; };
