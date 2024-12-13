@@ -15,7 +15,7 @@ let
   ];
 
   databaseTools = with pkgs; [
-    postgresql_17
+    postgresql_14
     redis
   ];
 
@@ -72,7 +72,7 @@ let
     nixpkgs-fmt
   ];
 
-  pythonTools = with pkgs; [ python314 ];
+  pythonTools = with pkgs; [ python311 ];
 
   rustTools = with pkgs; [
     bacon
