@@ -38,11 +38,6 @@
     diff = "diff --color=auto";
     grep = "grep --color=auto";
     szsh = "source ~/.zshrc";
-    tf = "terraform";
-    tg = "terragrunt";
-    zj = "zellij";
-    j = "just";
-    z = "autojump";
 
     # kubectl
     k = "kubectl";
@@ -57,8 +52,6 @@
 
     # Reload the Home Manager configuration (after git push)
     xs = "darwin-rebuild switch --flake ~/.config/nix";
-    xx =
-      "home-manager switch --flake github:the-nix-way/nome && source ${pkgs.homeDirectory}/.zshrc";
 
     # Run Nix garbage collection
     xgc = "nix store gc -v";

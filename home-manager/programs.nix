@@ -4,11 +4,11 @@
   # Alternative terminal
   alacritty = import ./programs/alacritty.nix { inherit pkgs; };
 
-  #autojump = {
-  #  enable = true;
-  #  enableZshIntegration = true;
-  #  enableBashIntegration = true;
-  #};
+  autojump = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
 
   # Fancy replacement for cat
   #bat = {
@@ -105,6 +105,15 @@
   # ripgrep
   ripgrep = {
     enable = true;
+  };
+
+  ssh = {
+    extraConfig = ''
+Host *
+  IgnoreUnknown AddKeysToAgent, UseKeychain
+  AddKeysToAgent yes
+  UseKeychain yes
+    '';
   };
 
   # The provider of my shell aesthetic
